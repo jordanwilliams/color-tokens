@@ -8,11 +8,15 @@ import ColorToken, { Token } from '@/components/ColorToken';
 
 const inter = Inter({ subsets: ['latin'] });
 
+function getCssVariableNameFromToken(token: Token): string {
+  return kebabCase(token.name);
+}
+
 /**
  * Adds a CSS variable to the stylesheet when given a token
  */
-export function setCssVariable(token: Token) {
-  const name = kebabCase(token.name);
+function setCssVariable(token: Token) {
+  const name = getCssVariableNameFromToken(token);
   let color = token.color;
 
   // Check if the token has a dark mode color defined. If the user is
@@ -35,7 +39,7 @@ const black: Token = {
   description: 'The base black color',
 };
 
-const blue: Token = {
+const primary: Token = {
   id: '2',
   color: '#4353ff',
   name: 'Primary FG',
@@ -51,10 +55,16 @@ type TokenRecord = Record<Token['id'], Token>;
 export default function Home() {
   const [tokens, setTokens] = useState<TokenRecord>({
     [black.id]: black,
-    [blue.id]: blue,
+    [primary.id]: primary,
   });
 
   const [colorScheme, setColorScheme] = useState<'dark' | 'light'>('light');
+
+  const [selectedTokenId, setSelectedTokenId] = useState<Token['id']>(
+    primary.id
+  );
+
+  const selectedToken = tokens[selectedTokenId];
 
   /**
    * Set the color variables in the stylesheet based on the user's
@@ -77,8 +87,6 @@ export default function Home() {
     window
       .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', (event) => {
-        console.log(event.matches);
-
         setColorScheme(event.matches ? 'dark' : 'light');
       });
   }, []);
@@ -111,9 +119,26 @@ export default function Home() {
             />
           ))}
         </div>
-        <p className={styles.element}>
-          This is an element that is styled by a color token
-        </p>
+
+        <div className={styles.element}>
+          <select
+            value={selectedTokenId}
+            onChange={(event) => setSelectedTokenId(event.target.value)}
+          >
+            {Object.values(tokens).map((token) => (
+              <option value={token.id} key={token.id}>
+                {token.name}
+              </option>
+            ))}
+          </select>
+          <p
+            style={{
+              color: `var(--${getCssVariableNameFromToken(selectedToken)})`,
+            }}
+          >
+            This is an element that is styled by the selected color token
+          </p>
+        </div>
       </main>
     </>
   );

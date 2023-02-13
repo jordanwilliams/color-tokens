@@ -3,13 +3,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 40px;
   min-height: 100vh;
 }
 
-.heading {
-  margin-bottom: 20px;
+.element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.element {
-  margin-top: 40px;
+.tokenList {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
 }
