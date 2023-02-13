@@ -5,6 +5,7 @@ import { Inter } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
 
 import ColorToken, { Token } from '@/components/ColorToken';
+import Row from '@/components/Row';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -111,6 +112,14 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <h1 className={styles.heading}>Color Tokens</h1>
         <div className={styles.tokenList}>
+          <Row>
+            <span>Color</span>
+            <span>Value</span>
+            <span>Dark Mode Color</span>
+            <span>Value</span>
+            <span>Name</span>
+            <span>Description</span>
+          </Row>
           {Object.values(tokens).map((token) => (
             <ColorToken
               token={token}

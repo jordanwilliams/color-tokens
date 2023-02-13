@@ -1,3 +1,4 @@
+import Row from './Row';
 import styles from './ColorToken.module.css';
 
 export type Token = {
@@ -17,7 +18,7 @@ function ColorToken({
   token: { color, name, description, darkModeColor },
 }: Props) {
   return (
-    <div className={styles.colorToken}>
+    <Row>
       <div
         className={styles.color}
         style={{
@@ -25,8 +26,6 @@ function ColorToken({
         }}
       />
       <div className={styles.value}>{color}</div>
-      <div className={styles.name}>{name}</div>
-      <div className={styles.description}>{description}</div>
       {darkModeColor ? (
         <div
           className={styles.color}
@@ -38,7 +37,9 @@ function ColorToken({
         <div className={styles.color}>N/A</div>
       )}
       <div className={styles.darkMode}>{darkModeColor ?? 'N/A'}</div>
-    </div>
+      <div className={styles.name}>{name}</div>
+      <div className={styles.description}>{description}</div>
+    </Row>
   );
 }
 
