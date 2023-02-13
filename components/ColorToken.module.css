@@ -1,6 +1,6 @@
 .colorToken {
   display: grid;
-  grid-template-columns: 40px 80px 120px 300px 40px 60px;
+  grid-template-columns: 40px 80px 120px 300px 80px 40px;
   justify-items: center;
   padding: 12px 0;
 }
@@ -11,20 +11,6 @@
   width: var(--color-size);
   height: var(--color-size);
   border-radius: 50%;
-}
-
-.value {
-}
-
-.name {
-}
-
-.description {
-
-}
-
-.darkMode {
-
 }
 
 .colorToken + .colorToken {
