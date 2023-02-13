@@ -1,0 +1,32 @@
+.colorToken {
+  display: grid;
+  grid-template-columns: 40px 80px 120px 300px 40px 60px;
+  justify-items: center;
+  padding: 12px 0;
+}
+
+.color {
+  --color-size: 20px;
+
+  width: var(--color-size);
+  height: var(--color-size);
+  border-radius: 50%;
+}
+
+.value {
+}
+
+.name {
+}
+
+.description {
+
+}
+
+.darkMode {
+
+}
+
+.colorToken + .colorToken {
+  border-top: 1px solid lightgrey;
+}
