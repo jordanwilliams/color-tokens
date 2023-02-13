@@ -113,12 +113,10 @@ export default function Home() {
         <h1 className={styles.heading}>Color Tokens</h1>
         <div className={styles.tokenList}>
           <Row>
-            <span>Color</span>
-            <span>Value</span>
-            <span>Dark Mode Color</span>
-            <span>Value</span>
-            <span>Name</span>
-            <span>Description</span>
+            <span style={{ fontWeight: 700 }}>Color</span>
+            <span style={{ fontWeight: 700 }}>Dark Mode (optional)</span>
+            <span style={{ fontWeight: 700 }}>Name</span>
+            <span style={{ fontWeight: 700 }}>Description</span>
           </Row>
           {Object.values(tokens).map((token) => (
             <ColorToken
@@ -129,8 +127,9 @@ export default function Home() {
           ))}
         </div>
 
-        <div className={styles.element}>
+        <div className={styles.styledElement}>
           <select
+            className={styles.select}
             value={selectedTokenId}
             onChange={(event) => setSelectedTokenId(event.target.value)}
           >
@@ -145,7 +144,8 @@ export default function Home() {
               color: `var(--${getCssVariableNameFromToken(selectedToken)})`,
             }}
           >
-            This is an element that is styled by the selected color token
+            The color of this element is styled by the selected color token. Try
+            changing the color scheme.
           </p>
         </div>
       </main>

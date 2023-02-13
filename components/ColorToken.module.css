@@ -1,4 +1,15 @@
+.colorToken + .colorToken {
+  border-top: 1px solid lightgrey;
+}
+
 .color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.colorPreview {
   --color-size: 20px;
 
   width: var(--color-size);
@@ -6,6 +17,6 @@
   border-radius: 50%;
 }
 
-.colorToken + .colorToken {
-  border-top: 1px solid lightgrey;
+.colorValue {
+  font-size: 11px;
 }

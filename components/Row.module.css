@@ -1,7 +1,9 @@
 .row {
   display: grid;
-  grid-template-columns: 80px 100px 80px 100px 100px 250px;
+  grid-template-columns: 140px 140px 200px 240px ;
   justify-items: center;
+  align-items: center;
+  text-align: center;
   padding: 12px 0;
 }
 

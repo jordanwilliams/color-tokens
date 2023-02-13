@@ -19,24 +19,28 @@ function ColorToken({
 }: Props) {
   return (
     <Row>
-      <div
-        className={styles.color}
-        style={{
-          background: `${color}`,
-        }}
-      />
-      <div className={styles.value}>{color}</div>
-      {darkModeColor ? (
+      <div className={styles.color}>
         <div
-          className={styles.color}
+          className={styles.colorPreview}
           style={{
-            background: `${darkModeColor}`,
+            background: `${color}`,
           }}
         />
+        <div className={styles.colorValue}>{color}</div>
+      </div>
+      {darkModeColor ? (
+        <div className={styles.color}>
+          <div
+            className={styles.colorPreview}
+            style={{
+              background: `${darkModeColor}`,
+            }}
+          />
+          <div className={styles.colorValue}>{darkModeColor}</div>
+        </div>
       ) : (
         <div className={styles.color}>N/A</div>
       )}
-      <div className={styles.darkMode}>{darkModeColor ?? 'N/A'}</div>
       <div className={styles.name}>{name}</div>
       <div className={styles.description}>{description}</div>
     </Row>
