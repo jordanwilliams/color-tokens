@@ -1,6 +1,6 @@
 import styles from './ColorToken.module.css';
 
-export type TokenProps = {
+export type Token = {
   id: string;
   color: string;
   name: string;
@@ -9,7 +9,8 @@ export type TokenProps = {
 };
 
 type Props = {
-  token: TokenProps;
+  token: Token;
+  updateToken: (token: Token) => void;
 };
 
 function ColorToken({
@@ -22,18 +23,20 @@ function ColorToken({
         style={{
           background: `${color}`,
         }}
-      ></div>
+      />
       <div className={styles.value}>{color}</div>
       <div className={styles.name}>{name}</div>
       <div className={styles.description}>{description}</div>
-      <div
-        className={styles.color}
-        style={{
-          background: `${darkModeColor}`,
-        }}
-      >
-        {darkModeColor ?? 'N/A'}
-      </div>
+      {darkModeColor ? (
+        <div
+          className={styles.color}
+          style={{
+            background: `${darkModeColor}`,
+          }}
+        />
+      ) : (
+        <div className={styles.color}>N/A</div>
+      )}
       <div className={styles.darkMode}>{darkModeColor ?? 'N/A'}</div>
     </div>
   );
