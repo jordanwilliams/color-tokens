@@ -1,6 +1,7 @@
 import styles from './ColorToken.module.css';
 
-type TokenProps = {
+export type TokenProps = {
+  id: string;
   color: string;
   name: string;
   description?: string;
