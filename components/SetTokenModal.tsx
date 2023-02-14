@@ -33,7 +33,6 @@ function SetTokenModal({ addToken, closeAddTokenModal, className }: Props) {
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    console.log('JORDAN');
     event.preventDefault();
 
     if (!canSubmit) return;
