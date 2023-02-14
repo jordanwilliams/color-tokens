@@ -79,7 +79,7 @@ export default function Home() {
     Object.values(tokens).forEach((token) => {
       setCssVariable(token);
     });
-  }, [colorScheme]);
+  }, [colorScheme, tokens]);
 
   /**
    * Set up an event listener to track the user's color scheme changes.
@@ -107,9 +107,6 @@ export default function Home() {
 
     // Add the new token to local state
     setTokens(nextTokens);
-
-    // Create a css variable for the token
-    setCssVariable(token);
   }
 
   return (
