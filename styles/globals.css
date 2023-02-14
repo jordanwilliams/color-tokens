@@ -1,3 +1,8 @@
+:root {
+  --colors-light-gray: #ebebeb;
+  --colors-black: #333;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -6,6 +11,7 @@
 
 body {
   padding: 20px;
+  color: var(--colors-black);
 }
 
 a {

@@ -11,7 +11,6 @@ export type Token = {
 
 type Props = {
   token: Token;
-  updateToken: (token: Token) => void;
 };
 
 function ColorToken({

@@ -8,5 +8,5 @@
 }
 
 .row + .row {
-  border-top: 1px solid lightgrey;
+  border-top: 1px solid var(--colors-light-gray);
 }

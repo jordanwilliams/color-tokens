@@ -1,0 +1,54 @@
+.modal {
+  --spacing: 20px;
+
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 8px;
+  padding: var(--spacing);
+}
+
+.heading {
+  margin-bottom: var(--spacing);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.label input {
+  color: inherit;
+  padding: 4px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.cancel,
+.submit {
+  appearance: none;
+  background: var(--colors-light-gray);
+  border: none;
+  cursor: pointer;
+  color: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 4px 8px;
+  border-radius: 4px;
+}
