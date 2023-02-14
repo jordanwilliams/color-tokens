@@ -58,6 +58,7 @@ function SetTokenModal({ addToken, closeAddTokenModal, className }: Props) {
                 onChange={handleChange}
                 autoFocus
                 required
+                placeholder="Border Color"
               />
             </label>
             <label className={styles.label}>
@@ -68,6 +69,7 @@ function SetTokenModal({ addToken, closeAddTokenModal, className }: Props) {
                 value={formState.color}
                 onChange={handleChange}
                 required
+                placeholder="#4353ff"
               />
             </label>
             <label className={styles.label}>
@@ -77,6 +79,7 @@ function SetTokenModal({ addToken, closeAddTokenModal, className }: Props) {
                 type="text"
                 value={formState.darkModeColor}
                 onChange={handleChange}
+                placeholder="red"
               />
             </label>
             <label className={styles.label}>
@@ -86,6 +89,7 @@ function SetTokenModal({ addToken, closeAddTokenModal, className }: Props) {
                 type="text"
                 value={formState.description}
                 onChange={handleChange}
+                placeholder="The primary color used for element borders"
               />
             </label>
             <div className={styles.controls}>
