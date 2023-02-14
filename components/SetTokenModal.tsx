@@ -6,6 +6,7 @@ import { Token } from './ColorToken';
 import styles from './SetTokenModal.module.css';
 
 type Props = {
+  /* eslint-disable no-unused-vars */
   addToken: (token: Token) => void;
   closeAddTokenModal: () => void;
   className: string;
