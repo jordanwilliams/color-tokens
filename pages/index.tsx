@@ -166,6 +166,15 @@ export default function Home() {
         </div>
 
         <div className={styles.styledElement}>
+          <p
+            style={{
+              color: `var(--${getCssVariableNameFromToken(selectedToken)})`,
+            }}
+          >
+            The color of this element is styled by the selected color token.
+            Change your theme in system settings to see how tokens with dark
+            mode variants are handled.
+          </p>
           <select
             className={styles.select}
             value={selectedTokenId}
@@ -177,14 +186,6 @@ export default function Home() {
               </option>
             ))}
           </select>
-          <p
-            style={{
-              color: `var(--${getCssVariableNameFromToken(selectedToken)})`,
-            }}
-          >
-            The color of this element is styled by the selected color token. Try
-            changing the color scheme.
-          </p>
         </div>
       </main>
     </>
